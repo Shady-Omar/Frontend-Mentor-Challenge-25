@@ -1,0 +1,288 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0px;
+    width: 100%;
+    overflow-x: hidden; 
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: hsl(226, 43%, 10%);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    width: 70%;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 4rem;
+    justify-items: stretch;
+}
+
+.container .user {
+    grid-column: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+
+.container .user .profile {
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 10px;
+}
+
+.container .user .profile .info {
+    margin: 1.5rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+}
+
+.container .user .profile .info img {
+    width: 40%;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.container .user .profile .info .text {
+    color: white;
+}
+
+.container .user .profile .info .text p {
+    font-weight: 300;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: hsl(236, 100%, 87%);
+}
+
+.container .user .profile .info .text h1 {
+    font-weight: 300;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.container .user .duration {
+    margin: 0.5rem 1.5rem;
+    margin-right: 4rem;
+    color: hsl(235, 45%, 61%);
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.container .user .duration p {
+    transition: 0.2s;
+}
+
+.container .user .duration p:hover {
+    color: white;
+}
+
+.container #activity {
+    grid-column: 2 / span 3;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, 225px);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.container #activity .block {
+    border-radius: 10px;
+    background-color: hsl(235, 46%, 20%);
+    position: relative;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+
+.container #activity .block::after {
+    content: url(images/icon-ellipsis.svg);
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    cursor: pointer;
+}
+
+.container #activity .block .icon {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    border-radius: 10px;
+    max-height: 80px;
+    min-height: 80px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.container #activity .block .icon img {
+    margin-right: 2rem;
+    width: 23%;
+}
+
+.container #activity .block .time {
+    background-color: rgb(28, 31, 74);
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 0.2s;
+}
+
+.container #activity .block .time:hover {
+    background-color: hsl(237, 39%, 36%);
+}
+
+.container #activity .block .time h3 {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.container #activity .block .time div {
+    margin-left: 1.5rem;
+    color: white;
+    font-size: 3em;
+    font-weight: 300;
+    cursor: default;
+}
+
+.container #activity .block .time p {
+    font-weight: 300;
+    font-size: 13px;
+    margin-left: 1.5rem;
+    margin-bottom: 15px;
+    color: hsl(236, 100%, 87%);
+    cursor: default;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    main {
+        max-width: 100%;
+        min-width:375px;
+        flex-direction: column;
+    }
+
+    .container {
+        display: grid;
+        row-gap: 11rem;
+        grid-template-columns: 325px;
+        justify-items: stretch;
+        margin: 4rem 0rem;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 6rem;
+    }
+
+    .container .user .profile .info {
+        margin: 1.5rem;
+        margin-right: 4rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .container .user .profile .info img {
+        width: 30%;
+        border: 3px solid white;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+    }
+
+    .container .user .profile .info .text h1 {
+        font-weight: 300;
+        font-size: 1.5em;
+        margin-top: 0;
+        width: 125%;
+    }
+
+    .container .user .duration {
+        margin: 0.5rem 1.5rem;
+        margin-right: 0rem;
+        color: hsl(235, 45%, 61%);
+        font-weight: 400;
+        font-size: 15px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 85%;
+    }
+
+    .container #activity {
+        grid-column: 1 / span 1;
+        display: grid;
+        row-gap: 12.5rem;
+        grid-template-columns: 325px;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .container #activity .block::after {
+        top: -80px;
+        right: 25px;
+    }
+
+    .container #activity .block .icon {
+        top: -149px;
+    }
+
+    .container #activity .block .time {
+        bottom: -25px;
+        height: 8rem;
+    }
+
+    .container #activity .block .time h3 {
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: default;
+    }
+
+    .container #activity .block .time div {
+        margin-left: 1.5rem;
+        color: white;
+        font-size: 2em;
+        font-weight: 300;
+        cursor: default;
+    }
+
+    .container #activity .block .time p {
+        font-weight: 300;
+        font-size: 13px;
+        margin-left: 1.5rem;
+        margin-bottom: 15px;
+        color: hsl(236, 100%, 87%);
+        cursor: default;
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+    }
+}
