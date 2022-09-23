@@ -19,7 +19,7 @@ function appendData(data) {
       <img src="${data[i].image}" alt="">
     </div>
     <div class="time">
-      <h3>${data[i].title}</h3>
+      <h2>${data[i].title}</h2>
       <div class="daily hide">${data[i].timeframes.daily.current}hrs</div>
       <p class="daily hide">Last Week - ${data[i].timeframes.daily.previous}hrs</p>
 
